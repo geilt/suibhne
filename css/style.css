@@ -102,6 +102,7 @@ nav a {
     text-transform: uppercase;
     margin: 0 1rem;
     transition: color 0.3s ease;
+    display: inline;
 }
 
 nav a:hover {
