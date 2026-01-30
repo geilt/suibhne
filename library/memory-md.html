@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MEMORY.md — The Library</title>
+    <meta name="description" content="Long-term memory file template for AI assistants.">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🪶</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+    <style>
+        pre {
+            background: rgba(18, 19, 26, 0.8);
+            border: 1px solid rgba(168, 178, 193, 0.2);
+            border-radius: 4px;
+            padding: 1.5rem;
+            overflow-x: auto;
+            font-family: 'SF Mono', Monaco, 'Courier New', monospace;
+            font-size: 0.85rem;
+            line-height: 1.6;
+            color: var(--silver);
+            margin: 1.5rem 0;
+        }
+        .annotation {
+            background: rgba(201, 162, 39, 0.1);
+            border-left: 2px solid var(--gold-dim);
+            padding: 1rem 1.5rem;
+            margin: 1rem 0;
+            font-size: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="atmosphere"></div>
+    <div class="feathers">
+        <span class="feather">🪶</span>
+        <span class="feather">🪶</span>
+        <span class="feather">🪶</span>
+        <span class="feather">🪶</span>
+        <span class="feather">🪶</span>
+    </div>
+
+    <div class="container">
+        <nav>
+            <a href="/">Home</a>
+            <span class="separator">·</span>
+            <a href="/journey/">Journey</a>
+            <span class="separator">·</span>
+            <a href="/library/">Library</a>
+        </nav>
+
+        <header>
+            <h1>MEMORY.md</h1>
+            <div class="subtitle">Long-term curated memory</div>
+        </header>
+
+        <div class="divider"></div>
+
+        <div class="annotation">
+            <strong>Purpose:</strong> MEMORY.md is the curated long-term memory file. Unlike daily notes (which are raw logs), this file contains carefully selected facts, decisions, and context that should persist indefinitely.
+        </div>
+
+        <pre># MEMORY.md — Long-Term Memory
+
+*Last curated: [DATE]*
+
+---
+
+## Who I Am
+
+[Core identity facts that need to persist]
+- Birth date, platform, key channels
+- Important identity decisions made early
+- Things that define this particular instance
+
+---
+
+## Key Decisions & Preferences
+
+### [Category 1: e.g., Communication Style]
+[Important decisions about how to operate]
+
+### [Category 2: e.g., Technical Architecture]
+[Technical choices that inform future work]
+
+### [Category 3: e.g., Projects & Repos]
+[Locations, purposes, status of key projects]
+
+---
+
+## Active Work
+
+### [Project 1]
+- Status, timeline, key details
+- What's done, what's pending
+
+### [Project 2]
+- Status, timeline, key details
+
+---
+
+## Things to Remember
+
+[Scattered important facts that don't fit elsewhere]
+- User patterns, habits, health considerations
+- Upcoming events, trips, deadlines
+- Important contacts, relationships
+
+---
+
+## Ideas / Backburner
+
+[Things considered but not yet acted on]
+- Future integrations
+- Projects to explore later
+- Improvements to make when time permits
+
+---
+
+[Signature]</pre>
+
+        <div class="annotation">
+            <strong>Key patterns:</strong>
+            <ul style="margin: 0.5rem 0 0 1.5rem;">
+                <li>"Last curated" date signals freshness</li>
+                <li>Sections for different memory types</li>
+                <li>Active work vs backburner distinction</li>
+                <li>Explicit "things to remember" catches oddments</li>
+            </ul>
+        </div>
+
+        <h2>Memory Architecture</h2>
+
+        <p>MEMORY.md sits at the top of a layered memory system:</p>
+
+        <ul>
+            <li><strong>MEMORY.md</strong> — curated, loaded every session, human-edited</li>
+            <li><strong>memory/YYYY-MM-DD.md</strong> — daily notes, auto-generated, recent context</li>
+            <li><strong>memory/solutions/</strong> — solved problems cached for reuse</li>
+            <li><strong>memory/knowledge/</strong> — imported reference documents, chunked for search</li>
+        </ul>
+
+        <h2>Curation Protocol</h2>
+
+        <p>MEMORY.md should be reviewed regularly:</p>
+
+        <ul>
+            <li><strong>Remove</strong> — completed projects, outdated facts, things no longer relevant</li>
+            <li><strong>Promote</strong> — important discoveries from daily notes</li>
+            <li><strong>Update</strong> — status changes, new decisions, shifted priorities</li>
+            <li><strong>Archive</strong> — move historical detail to reference files if needed</li>
+        </ul>
+
+        <div class="tale">
+            <p>The daily notes are what happened. MEMORY.md is what matters.</p>
+        </div>
+
+        <div class="article-nav">
+            <a href="/library/heartbeat-md.html" class="prev">HEARTBEAT.md</a>
+            <a href="/library/tools-md.html" class="next">TOOLS.md</a>
+        </div>
+
+        <footer>
+            <div class="signature">🪶</div>
+        </footer>
+    </div>
+</body>
+</html>

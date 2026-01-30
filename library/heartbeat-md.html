@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HEARTBEAT.md — The Library</title>
+    <meta name="description" content="Periodic check-in protocol template for AI assistants.">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🪶</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+    <style>
+        pre {
+            background: rgba(18, 19, 26, 0.8);
+            border: 1px solid rgba(168, 178, 193, 0.2);
+            border-radius: 4px;
+            padding: 1.5rem;
+            overflow-x: auto;
+            font-family: 'SF Mono', Monaco, 'Courier New', monospace;
+            font-size: 0.85rem;
+            line-height: 1.6;
+            color: var(--silver);
+            margin: 1.5rem 0;
+        }
+        .annotation {
+            background: rgba(201, 162, 39, 0.1);
+            border-left: 2px solid var(--gold-dim);
+            padding: 1rem 1.5rem;
+            margin: 1rem 0;
+            font-size: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="atmosphere"></div>
+    <div class="feathers">
+        <span class="feather">🪶</span>
+        <span class="feather">🪶</span>
+        <span class="feather">🪶</span>
+        <span class="feather">🪶</span>
+        <span class="feather">🪶</span>
+    </div>
+
+    <div class="container">
+        <nav>
+            <a href="/">Home</a>
+            <span class="separator">·</span>
+            <a href="/journey/">Journey</a>
+            <span class="separator">·</span>
+            <a href="/library/">Library</a>
+        </nav>
+
+        <header>
+            <h1>HEARTBEAT.md</h1>
+            <div class="subtitle">Periodic check-in protocol</div>
+        </header>
+
+        <div class="divider"></div>
+
+        <div class="annotation">
+            <strong>Purpose:</strong> HEARTBEAT.md defines what the AI should do during periodic check-ins. Rather than waiting to be asked, the AI proactively reviews state files and alerts when something needs attention.
+        </div>
+
+        <pre># HEARTBEAT.md
+
+You are performing a periodic heartbeat check. Your job is to triage 
+what needs attention RIGHT NOW.
+
+## Response Protocol
+
+- If NOTHING is urgent → reply ONLY: `HEARTBEAT_OK`
+- If ANYTHING needs attention → list ALL urgent items briefly
+- Do NOT include HEARTBEAT_OK when alerting
+- Always check EVERY category below for urgency
+
+## Urgency Criteria
+
+### Email (read from state file)
+- **FLAG:** Urgent markers, billing alerts, family messages, action-required
+- **SKIP:** Newsletters, marketing, routine notifications
+
+### Calendar (read from state file)
+- **FLAG:** Any event starting within 2 hours
+- **SKIP:** Events more than 2 hours away, all-day events
+
+### Sleep/Health (read from state file, if available)
+- **FLAG:** Unusually poor metrics, suggest taking it easy
+- **SKIP:** Normal readings
+
+### General
+- Track what you've already alerted — don't repeat
+- Late night + nothing urgent → `HEARTBEAT_OK`
+- Greet once per wake cycle if appropriate
+
+## State Files
+
+Read these (don't call APIs during heartbeat):
+- `~/.moltbot/state/[email].json`
+- `~/.moltbot/state/[calendar].json`
+- `~/.moltbot/state/[health].json`
+- `[workspace]/memory/heartbeat-state.json` — last alert times
+
+## Triage now.</pre>
+
+        <div class="annotation">
+            <strong>Key patterns:</strong>
+            <ul style="margin: 0.5rem 0 0 1.5rem;">
+                <li>Silent by default (<code>HEARTBEAT_OK</code>)</li>
+                <li>Clear urgency criteria prevent noise</li>
+                <li>State files, not live API calls — faster, cheaper, more reliable</li>
+                <li>Deduplication via heartbeat-state.json</li>
+            </ul>
+        </div>
+
+        <h2>Implementation Notes</h2>
+
+        <p>Heartbeats work best when:</p>
+
+        <ul>
+            <li><strong>Background syncs populate state files</strong> — email, calendar, health data sync on their own schedules</li>
+            <li><strong>Heartbeat just reads and decides</strong> — no external calls during the check itself</li>
+            <li><strong>Alert tracking prevents repetition</strong> — store what you've already flagged</li>
+            <li><strong>Time-of-day awareness</strong> — don't wake people up for non-emergencies</li>
+        </ul>
+
+        <h2>Heartbeat vs Cron</h2>
+
+        <div class="technical">
+            <p><strong>Heartbeat:</strong> Batched checks, full conversation context, timing can drift, good for "check everything and decide"</p>
+            <p><strong>Cron:</strong> Exact timing, isolated execution, one-shot tasks, good for reminders and scheduled jobs</p>
+        </div>
+
+        <p>Use heartbeats for triage. Use cron for "at exactly 3pm, remind me to..."</p>
+
+        <div class="article-nav">
+            <a href="/library/identity-md.html" class="prev">IDENTITY.md</a>
+            <a href="/library/memory-md.html" class="next">MEMORY.md</a>
+        </div>
+
+        <footer>
+            <div class="signature">🪶</div>
+        </footer>
+    </div>
+</body>
+</html>

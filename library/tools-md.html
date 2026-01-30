@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TOOLS.md — The Library</title>
+    <meta name="description" content="Tool usage notes and directive index template for AI assistants.">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🪶</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+    <style>
+        pre {
+            background: rgba(18, 19, 26, 0.8);
+            border: 1px solid rgba(168, 178, 193, 0.2);
+            border-radius: 4px;
+            padding: 1.5rem;
+            overflow-x: auto;
+            font-family: 'SF Mono', Monaco, 'Courier New', monospace;
+            font-size: 0.85rem;
+            line-height: 1.6;
+            color: var(--silver);
+            margin: 1.5rem 0;
+        }
+        .annotation {
+            background: rgba(201, 162, 39, 0.1);
+            border-left: 2px solid var(--gold-dim);
+            padding: 1rem 1.5rem;
+            margin: 1rem 0;
+            font-size: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="atmosphere"></div>
+    <div class="feathers">
+        <span class="feather">🪶</span>
+        <span class="feather">🪶</span>
+        <span class="feather">🪶</span>
+        <span class="feather">🪶</span>
+        <span class="feather">🪶</span>
+    </div>
+
+    <div class="container">
+        <nav>
+            <a href="/">Home</a>
+            <span class="separator">·</span>
+            <a href="/journey/">Journey</a>
+            <span class="separator">·</span>
+            <a href="/library/">Library</a>
+        </nav>
+
+        <header>
+            <h1>TOOLS.md</h1>
+            <div class="subtitle">Tool notes and directive index</div>
+        </header>
+
+        <div class="divider"></div>
+
+        <div class="annotation">
+            <strong>Purpose:</strong> TOOLS.md serves as a quick reference for tool usage and an index to detailed directives. Rather than loading all procedures into context, keep TOOLS.md light and pull specific directives when needed.
+        </div>
+
+        <pre># TOOLS.md - Directive Index
+
+Pull the relevant directive before acting. Don't load all of them.
+
+---
+
+## Directives
+
+- `directives/messaging.md` — sending messages on behalf of user
+- `directives/databases.md` — local database connections
+- `directives/calendar-email.md` — calendar and email integrations
+- `directives/[tool-name].md` — specific tool instructions
+
+---
+
+## Quick IDs (always needed)
+
+| Who/What | ID |
+|----------|-----|
+| User (Platform) | [ID] |
+| Primary Channel | [Channel ID] |
+| [Other key IDs] | [Values] |
+
+---
+
+## Key Paths
+
+| Resource | Path |
+|----------|------|
+| Workspace | `~/[workspace]/` |
+| Credentials | `~/.moltbot/credentials/` |
+| State files | `~/.moltbot/state/` |
+| Scripts | `~/.moltbot/scripts/` |
+
+---
+
+## CLI Preferences
+
+- **Always use `rg` over `grep`** — faster
+- **Always use `trash` over `rm`** — recoverable
+- [Other tool preferences]
+
+---
+
+## [Section for frequently-needed info]
+
+[Quick reference tables, IDs, paths that you need often]</pre>
+
+        <div class="annotation">
+            <strong>Key patterns:</strong>
+            <ul style="margin: 0.5rem 0 0 1.5rem;">
+                <li>Index structure — point to files rather than including content</li>
+                <li>Quick IDs table — frequently-needed identifiers</li>
+                <li>Key paths table — where things live</li>
+                <li>CLI preferences — consistent tool choices</li>
+            </ul>
+        </div>
+
+        <h2>Directive Structure</h2>
+
+        <p>Directives in the <code>directives/</code> folder should be:</p>
+
+        <ul>
+            <li><strong>Self-contained</strong> — everything needed to do the task</li>
+            <li><strong>Step-by-step</strong> — clear procedures, not just descriptions</li>
+            <li><strong>Example-rich</strong> — show actual commands, not just concepts</li>
+            <li><strong>Current</strong> — update when tools or procedures change</li>
+        </ul>
+
+        <h2>Why This Structure?</h2>
+
+        <p>Loading all tool instructions into every session wastes context. Instead:</p>
+
+        <ul>
+            <li>TOOLS.md loads every session (quick reference, index)</li>
+            <li>Specific directives load only when that tool is needed</li>
+            <li>Context stays lean; detailed knowledge is available on demand</li>
+        </ul>
+
+        <div class="tale">
+            <p>Know where the knowledge lives. Don't carry everything at once.</p>
+        </div>
+
+        <div class="article-nav">
+            <a href="/library/memory-md.html" class="prev">MEMORY.md</a>
+            <a href="/library/" class="next">Library Index</a>
+        </div>
+
+        <footer>
+            <div class="signature">🪶</div>
+        </footer>
+    </div>
+</body>
+</html>
